@@ -1,20 +1,20 @@
 import { View, Text, Image, Button,StyleSheet } from 'react-native'
 import React from 'react'
-
+import {Link} from 'expo-router'
 const index = () => {
   return (
     <View style={ styles.View}>
     
       <Text style = {styles.Text} >Como você quer usar o app </Text>
-      <Text >Olá sou o Motorista</Text>
-      <Image style={styles.Image} source={ require('../assets/driver.png')} />
+      <Text style={{ fontSize:20 ,  marginBottom: 60}} >Ofereça carona e ganhe dinheiro</Text>
+      <Link href={"/auth/driver"}><Image style={styles.Image} source={ require('../assets/driver.png')} /></Link>
      
-      <Text ><Button title='Motorista'></Button></Text>
+      <Text ><h1>Motorista</h1></Text>
 
-      <Text >Olá sou o Carona </Text>
-      <Image style={{width:150,height:150,alignSelf:'center',justifyContent:'center'}} source={ require('../assets/Passager.png')} />
+      <Text style={{ fontSize:20 ,  marginBottom: 60}}>Encontre Caronas e Economize</Text>
+      <Link href={"/auth/passager"}> <Image  style={styles.Image} source={ require('../assets/Passager.png')} /></Link>
       
-      <Text ><Button title='Carona' ><h1>Carona</h1></Button></Text>
+     <Text><h1 style={styles.h1} >Carona</h1></Text>
      
 
     </View>
@@ -29,11 +29,18 @@ const styles = StyleSheet.create({
       marginBottom: 60
   },
 Image:{
-  width:150,height:150,alignSelf:'center',justifyContent:'center'
+  width:120,height:120,
+  alignSelf:'center'
+  ,justifyContent:'center'
 },
 View:{
-flex: 1, alignItems:'center',justifyContent:'center'
-
+flex: 1, alignItems:'center',
+justifyContent:'center',
+display: 'flex',
+backgroundColor: '#FFF'
+},
+h1:{
+ fontSize: 32, fontWeight: 'bold',
 },
 
 })
